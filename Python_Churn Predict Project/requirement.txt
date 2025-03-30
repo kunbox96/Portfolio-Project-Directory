@@ -1,0 +1,11 @@
+scikit-learn
+openpyxl
+plotly
+jupyterlab-fonts
+pandas
+seaborn
+numpy
+matplotlib
+datetime
+plotly-express
+squarify
