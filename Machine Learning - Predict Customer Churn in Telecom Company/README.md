@@ -1,42 +1,75 @@
-# Python Customer Churn Prediction Model
+# 📊 Project Title: Python Customer Churn Prediction Model  
+Author: Alvin Nguyễn – Nguyễn Thế Đạt  
+Date: 2025-04-10  
+Tools Used: Python, Pandas, Scikit-learn
 
-This project focuses on predicting customer churn using machine learning techniques in Python, leveraging libraries such as Pandas and Scikit-Learn.
+---
 
-## Project Overview
+## 📑 Table of Contents  
+1. [📌 Background & Overview](#-background--overview)  
+2. [📂 Dataset Description & Structure](#-dataset-description--structure)  
+3. [⚒️ Main Process](#️-main-process)  
+4. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
-The goal is to build a predictive model that accurately identifies customers at risk of churning, enabling proactive retention strategies.
+## 📌 Background & Overview  
 
-## Skills and Tools Used
+### 🎯 Objective:
+The goal of this project is to **build a predictive machine learning model to identify customers likely to churn**, allowing the business to proactively implement retention strategies.
 
-- **Python**: Implemented the entire data pipeline and modeling process.
-- **Pandas**: Managed data cleaning and preprocessing tasks.
-- **Scikit-Learn**: Utilized for model building, evaluation, and feature selection.
+### ❓ Business Question:
+- What are the key behavioral and service factors that lead to customer churn?
+- How can we predict which customers are at risk and reduce attrition rate?
 
-## Methodology
+### 👤 Who is this project for?
+✔️ Customer Success & Retention Teams  
+✔️ Data Analysts at Subscription-based businesses  
+✔️ Marketing Teams planning retention campaigns  
 
-1. **Data Collection**: Acquired customer data from [source].
-2. **Data Cleaning**: Addressed missing values and inconsistencies using Pandas.
-3. **Exploratory Data Analysis (EDA)**: Identified key patterns and relationships influencing churn.
-4. **Feature Engineering**: Created new features to enhance model predictive power.
-5. **Model Building**: Applied various algorithms using Scikit-Learn, selecting the best-performing model.
-6. **Evaluation**: Assessed model accuracy and fine-tuned hyperparameters for optimal performance.
-7. **Deployment**: [If applicable, describe how the model was deployed or how predictions can be accessed.]
+## 📂 Dataset Description & Structure  
 
-## Key Insights
+### 📌 Data Source:
+- Source: Public telecom dataset (or company CRM exports)  
+- Size: ~6,600 rows × ~20 columns  
+- Format: `.csv`
 
-- Identified primary factors contributing to customer churn.
-- Developed actionable recommendations to reduce churn based on model findings.
+### 📊 Key Variables:
+| Column Name       | Data Type | Description                                 |
+|------------------|-----------|---------------------------------------------|
+| customerID        | Text      | Unique identifier for each customer         |
+| tenure            | Integer   | Number of months customer has stayed        |
+| MonthlyCharges    | Float     | Monthly payment amount                      |
+| DaySinceLastOrder | Integer   | Days since last order                       |
+| CashbackAmount    | Float     | Total cashback received                     |
+| Churn             | Boolean   | Whether the customer left (1) or stayed (0) |
 
-## Repository Structure
 
-- `Churn_Predict_Project.ipynb`: Jupyter Notebook containing the code and analysis.
-- `churn_prediction.xlsx`: Dataset used for modeling.
-- `README.md`: Project documentation (this file).
+## ⚒️ Main Process
 
-## Getting Started
+1️⃣ **Data Cleaning & Preprocessing**  
+- Removed duplicates and filled missing values using linear interpolation  
+- Applied OneHotEncoding for categorical variables  
+- Scaled numerical features for modeling
 
-To explore or replicate this project:
+2️⃣ **Feature Selection**  
+- Used a Decision Tree Classifier to evaluate feature importance  
+- Identified `DaySinceLastOrder`, `Tenure`, and `CashbackAmount` as key predictors
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kunbox96/Portfolio-Project-Directory.git
+3️⃣ **Model Building & Evaluation**  
+- Trained a Decision Tree model with 70/30 train-test split  
+- Achieved ~83% accuracy with reasonable recall/precision trade-off
+
+
+## 🔎 Final Conclusion & Recommendations
+
+### 📌 Key Takeaways:
+✔️ Dataset was well-balanced — no oversampling needed  
+✔️ High churn associated with long delay since last order, short tenure, and low cashback  
+✔️ Decision Tree modeling provided interpretable insight into churn drivers
+
+### ✅ Business Recommendations:
+- **Re-engage customers** with long inactivity using targeted offers  
+- **Reward tenure milestones** with loyalty incentives  
+- Offer **cashback upgrades** to users with low reward history  
+- Monitor churn drivers with periodic dashboards for early detection
+
+---

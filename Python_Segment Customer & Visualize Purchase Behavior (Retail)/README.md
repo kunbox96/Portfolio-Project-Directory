@@ -1,54 +1,90 @@
-# 🧠 Customer Segmentation with RFM Analysis (Python Project)
-
-This project performs **RFM (Recency, Frequency, Monetary)** analysis to segment customers based on their purchase behavior using Python. The data is derived from a UK-based online retail dataset, consisting of over 300,000 transactions.
-
----
-
-## 🛠 Skills & Tools Used
-
-- **Python**: Core programming language for end-to-end analysis  
-- **Pandas**: For data cleaning and transformation  
-- **Seaborn & Matplotlib**: For visualizing customer segments and metric distributions  
-- **Squarify**: To generate treemap visualizations  
-- **Jupyter Notebook**: For organizing and presenting the analysis  
-- **EDA & Data Cleaning**: Handled missing values, duplicates, and outliers
+# 📊 Project Title: Customer Segmentation & Purchase Behavior Analysis (Retail - Python)  
+Author: Alvin Nguyễn – Nguyễn Thế Đạt  
+Date: 2025-04-10  
+Tools Used: Python
 
 ---
 
-## 📈 Project Breakdown
+![Customer Segmentation RFM Python Banner](./image/banner.png)
 
-### 1. Exploratory Data Analysis (EDA)
-- Checked for missing values in 'CustomerID' and 'Description', and dropped/corrected them accordingly.
-- Removed canceled invoices (`InvoiceNo` starting with “C”) and negative pricing/quantity values.
-- Focused analysis only on **UK customers** as they represent the majority of the data.
 
-### 2. RFM Segmentation (Quintiles Method)
-- Created a `Revenue` column by multiplying `Quantity` × `Price`.  
-- Calculated `Recency`, `Frequency`, and `Monetary` values.  
-- Used **`qcut()`** to assign scores for RFM values and segment customers into groups such as:
-  - Champions
-  - Loyal Customers
-  - At Risk
-  - Lost
-  - Potential Loyalist, etc.
 
-### 3. Visualization & Insights
-- Used **histograms** to explore RFM distributions.  
-- **Treemap** and **bar plots** to visualize:
-  - Top 5 segments by transaction volume
-  - Top 5 segments by revenue contribution
+## 📑 Table of Contents  
+1. [📌 Background & Objectives](#-background--objectives)  
+2. [📂 Dataset Overview](#-dataset-overview)  
+3. [⚒️ Analysis Workflow](#️-analysis-workflow)  
+4. [🔎 Key Insights & Business Recommendations](#-key-insights--business-recommendations)
 
-### 4. Business Recommendations
-- Tailored marketing actions for each customer segment:
-  - **Champions & Loyal**: Encourage more frequent purchases with rewards
-  - **Promising & Potential Loyalists**: Use promo codes and offers to convert them
-  - **Hibernating & At Risk**: Send re-engagement emails or “Come Back” deals
-  - **Lost Customers**: Use surveys to understand churn reasons
 
----
 
-## 📦 Requirements
+## 📌 Background & Objectives
 
-Install dependencies using:
-```bash
-pip install -r requirements.txt
+### 🎯 Objective:
+To segment online retail customers based on **recency**, **frequency**, and **monetary** behavior, allowing the business to improve retention and marketing targeting.
+
+### ❓ Business Questions:
+- Who are our most valuable customers?  
+- Which segments are inactive or at risk?  
+- What actions can we take to engage each segment better?
+
+### 👤 Who is this project for?
+✔️ CRM & Loyalty Teams  
+✔️ Marketing & Retargeting Analysts  
+✔️ Business Intelligence & Growth Strategy Teams
+
+
+
+## 📂 Dataset Overview
+
+- **Source**: UK Online Retail Transactions (2010–2011)  
+- **Volume**: ~300,000 rows across ~20,000 customers  
+- **Format**: Excel `.xlsx`  
+- **Key Fields**: `InvoiceNo`, `CustomerID`, `Quantity`, `Price`, `Country`, `InvoiceDate`
+
+
+
+## ⚒️ Analysis Workflow
+
+1️⃣ **Data Cleaning**  
+- Removed canceled invoices and records with missing `CustomerID` or invalid pricing  
+- Filtered transactions to include **only UK customers**
+
+2️⃣ **Feature Engineering**  
+- Created a `Revenue` column (Quantity × Price)  
+- Calculated **Recency**, **Frequency**, and **Monetary** for each customer  
+- Used `qcut()` to segment customers into RFM quintiles and assigned scores
+
+3️⃣ **RFM Segmentation**  
+- Combined RFM scores into named groups:  
+  - *Champions*, *Loyal*, *Potential Loyalist*, *At Risk*, *Lost*, etc.  
+- Counted customers and total revenue for each segment
+
+4️⃣ **Data Visualization**  
+- Used **histograms**, **bar plots**, and **treemaps** to illustrate:  
+  - Distribution of RFM values  
+  - Top-performing segments by revenue and transactions
+
+
+
+## 🔎 Key Insights & Business Recommendations
+
+### 📌 Key Takeaways:
+✔️ *Champions* and *Loyal* customers account for the **highest revenue and frequency**  
+✔️ *At Risk* and *Hibernating* segments are large and can be reactivated  
+✔️ *Lost Customers* and *About to Sleep* represent churn risk
+
+### ✅ Business Recommendations:
+- **Reward loyalty**: Offer exclusive rewards to *Champions* and *Loyal* segments  
+- **Reactivation campaigns**: Send "come back" deals to *Hibernating* and *At Risk* customers  
+- **Nurture new users**: Provide early discounts to *New* and *Promising* users  
+- **Investigate churn**: Run exit surveys for *Lost* customers to improve retention
+
+
+
+## 📁 Files Included
+
+- `Python_Segment Customer & Visualize Purchase Behavior.ipynb` – Main Jupyter notebook  
+- `ecommerce retail.xlsx` – Raw dataset  
+- `requirement.txt` – Library dependencies  
+- `README.md` – This file
+

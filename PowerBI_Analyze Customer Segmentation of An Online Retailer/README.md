@@ -1,45 +1,89 @@
-# 🧠 RFM Segmentation Customer Analytics Dashboard
+# 📊 Project Title: RFM Segmentation for Customer Behavior Insight & Marketing Strategy  
+Author: Alvin Nguyễn – Nguyễn Thế Đạt  
+Date: 2025-04-10  
+Tools Used: Power BI, Power Query, DAX
 
-This project showcases **RFM (Recency, Frequency, Monetary)** segmentation using real-world customer transaction data, designed to identify high-value segments and provide data-driven business actions through visualization.
+![Customer Segmentation Banner](./image/banner.png)
 
-## 📊 Project Overview
 
-Using **Power BI**, I analyzed a dataset of **19,820 customers** by applying RFM metrics to segment them into **10 distinct customer groups** (e.g., Champions, At Risk, New Customers). The goal was to understand purchasing behavior and design tailored engagement strategies.
+## 📑 Table of Contents  
+1. [📌 Background & Overview](#-background--overview)  
+2. [📂 Dataset & Segmentation Summary](#-dataset--segmentation-summary)  
+3. [⚒️ Main Process](#️-main-process)  
+4. [🔎 Key Insights & Business Recommendations](#-key-insights--business-recommendations)
 
-The dashboard includes:
-- RFM Metrics Explanation & Scores  
-- Segment Distribution & Popularity  
-- Segment Revenue Growth & Top Revenue Contributors  
-- Actionable Recommendations per Segment  
 
-## 🛠 Skills & Tools Used
+## 📌 Background & Overview  
 
-- **Power BI**: For dashboard creation and interactive visualization  
-- **Power Query**: For data cleaning, transformation, and preparation  
-- **DAX (Data Analysis Expressions)**: For writing custom measures  
-- **Design Thinking Canvas**: For empathizing with stakeholders and aligning insights to business needs  
-- **Data Analysis Process**:  
-  - **Ask**: What are key customer segments?  
-  - **Prepare**: Clean and structure data using Power Query  
-  - **Process**: Apply RFM logic and segment customers  
-  - **Analyze**: Visualize segments, revenue trends, frequency & recency  
-  - **Share**: Design user-friendly dashboard for stakeholders  
-  - **Act**: Provide strategic recommendations for each customer segment  
+### 🎯 Objective:
+This project aims to segment a customer base of 19,820 users using **RFM (Recency, Frequency, Monetary)** analysis. The goal is to **understand customer behavior** and provide **tailored strategies** to increase retention, optimize campaigns, and improve customer lifetime value.
 
-## 🎯 Key Insights
+### ❓ Business Questions:
+- Which customer groups contribute most to revenue and frequency?
+- Which segments are at risk or can be reactivated for growth?
+- How can we design personalized actions for different customer types?
 
-- **Champions** drive the highest revenue ($75M) with the most transactions (973), while **At Risk** and **Cannot Lose Them** segments show high potential if re-engaged.
-- Suggested marketing actions tailored to each segment — such as loyalty rewards, onboarding support, and reactivation campaigns.
-- This project not only shows technical analytics ability but also reflects customer empathy and strategic thinking.
+### 👤 Who is this project for?
+✔️ CRM & Loyalty Program Teams  
+✔️ Marketing Analysts & Growth Strategists  
+✔️ Business Stakeholders & Decision Makers  
 
-## 📌 Outcome
 
-Delivered a powerful business intelligence dashboard that helps organizations:
-- Identify top-performing customers  
-- Recognize and recover fading customer relationships  
-- Increase customer lifetime value through targeted strategies  
 
----
+## 📂 Dataset & Segmentation Summary
 
-> ✅ *Perfect for entry-level data analyst roles where both business understanding and data skills are valued.*
+- 📄 **Data Source**: Retail transaction database (19,820 customers)  
+- 🧩 **Segmentation Logic**: RFM scoring using quintiles (Q1–Q5)  
+- 🧮 **Segments Created**: 10 groups including *Champions*, *Loyal*, *At Risk*, *Lost*, *Need Attention*, etc.  
+- 📊 **Dashboard View Includes**:
+  - RFM Score Distribution
+  - Segment-wise revenue and transaction volume
+  - Top customers and top categories
+  - Strategic recommendations for each segment
+
+
+
+## ⚒️ Main Process
+
+1️⃣ **Data Cleaning & Preparation**  
+- Filtered UK-based transactions  
+- Removed cancelled invoices and outliers (e.g., negative price)  
+- Created a new Revenue column (`Quantity * Price`)  
+
+2️⃣ **RFM Score Calculation**  
+- Used **Power Query** for data prep and **DAX** to calculate Recency, Frequency, and Monetary values  
+- Scored each customer across RFM dimensions using **quintile binning**  
+- Mapped combined RFM scores into defined customer segments  
+
+3️⃣ **Dashboard Design (Power BI)**  
+- Built visuals to explore:  
+  - Segment popularity  
+  - Revenue vs. last year  
+  - Frequency by segment  
+  - Top customer & product contributors  
+
+
+
+## 🔎 Key Insights & Business Recommendations
+
+### 📌 Key Takeaways:
+✔️ **Champions** contribute the most revenue ($75M), with the highest frequency (973 transactions)  
+✔️ **At Risk** and **Cannot Lose Them** segments show high revenue potential if reactivated  
+✔️ Segments like **Hibernating**, **Lost**, and **About To Sleep** need engagement strategies  
+
+### ✅ Business Recommendations:
+- **Maintain engagement** with *Champions*, *Loyal*, and *Need Attention* segments using early access & loyalty perks  
+- **Re-activate* *At Risk*, *Hibernating*, and *Cannot Lose Them* segments with personalized "come-back" promotions  
+- **Promote onboarding campaigns** for *New* and *Promising* customers to improve retention and frequency  
+- **Run surveys or exit analysis** for *Lost* customers to prevent future churn
+
+
+
+## 📁 Repository Structure
+
+- `RFM_Segmentation.pbix`: Power BI dashboard file  
+- `README.md`: Project documentation  
+- Source data & PDFs available upon request
+
+
 

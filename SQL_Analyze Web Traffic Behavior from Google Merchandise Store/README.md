@@ -1,44 +1,82 @@
-# Google Analytics SQL Data Exploration
-
-This project explores user session data from the **Google Analytics Sample Dataset** using **SQL on BigQuery**. The goal was to extract business insights related to user behavior, device usage, and revenue generation.
-
-## 🔍 Project Objective
-
-To analyze website user sessions and deliver actionable insights to support digital marketing and conversion strategies.
-
-## 🛠️ Tools & Skills Applied
-
-- **SQL**: Advanced queries including filtering, joins, CTEs, and window functions  
-- **BigQuery**: Cloud-based SQL engine for handling large datasets  
-- **Google Analytics Dataset**: Sample dataset provided in BigQuery (public data)  
-- **Data Interpretation**: Business translation of user behavior patterns
-
-## 📊 Key Analyses Performed
-
-- Top-performing **traffic sources** by sessions and revenue  
-- Device categories and their impact on **session quality** and **transaction rates**  
-- User acquisition breakdown by **channel groupings** and **landing pages**  
-- Trends in **average session duration**, **bounce rate**, and **goal completions**
-
-## 📁 Repository Contents
-
-- `SQL_google_analytics_sample-ga_sessions.sql`: Full SQL query script used for analysis  
-- `README.md`: Documentation describing purpose, approach, and insights  
-
-## ✅ Example Insights
-
-- Desktop users drove the highest revenue despite mobile having more sessions  
-- Organic Search outperformed Paid Search in goal conversion rate  
-- Highest bounce rate found among users entering through referral channels
-
-## 🧠 Learning Outcome
-
-This project improved my ability to:
-- Analyze user behavior using real-world web analytics data  
-- Translate SQL outputs into clear, actionable business recommendations  
-- Practice performance-optimized query writing for large-scale datasets
+# 📊 Project Title: Web Traffic Analysis Using SQL & Google Analytics Sample Data  
+Author: Alvin Nguyễn – Nguyễn Thế Đạt  
+Tools Used: SQL, BigQuery
 
 ---
 
-> 💡 *Ideal for roles involving digital analytics, SQL-based reporting, or marketing data analysis.*
+![Web Analytics SQL Banner](./image/banner.png)
+
+
+
+## 📑 Table of Contents  
+1. [📌 Background & Objective](#-background--objective)  
+2. [📂 Dataset & Structure](#-dataset--structure)  
+3. [⚒️ Main Process](#️-main-process)  
+4. [🔎 Key Insights & Business Recommendations](#-key-insights--business-recommendations)
+
+
+
+## 📌 Background & Objective  
+
+### 🎯 Objective:
+To explore **user session behavior** from the Google Merchandise Store and generate **marketing and product insights** using SQL queries on BigQuery.
+
+### ❓ Business Questions:
+- Which **traffic sources** bring in the most revenue?
+- How does **device type** affect session quality and goal completion?
+- What are the trends in **bounce rate** and **landing page performance**?
+
+### 👤 Who is this project for?
+✔️ Digital Marketing Analysts  
+✔️ Web Analytics Teams  
+✔️ Data Analysts using SQL for product & customer insight  
+
+
+## 📂 Dataset & Structure
+
+### 📌 Data Source:
+- Source: **Google Analytics Sample Dataset** (hosted in Google BigQuery)  
+- Format: SQL (1 main table: `ga_sessions_*`)  
+- Volume: Millions of rows in partitioned daily tables
+
+### 📊 Key Tables & Features:
+| Table | Description |
+|-------|-------------|
+| `ga_sessions_*` | User sessions including device, traffic source, transactions, and page views |
+| Fields used include: `trafficSource`, `device`, `totals`, `geoNetwork`, `hits`, `transactions` |
+
+
+
+## ⚒️ Main Process
+
+1️⃣ **Query Design**  
+- Used SQL to aggregate sessions, bounce rates, session duration, and transactions  
+- Applied CTEs and window functions for advanced grouping and ranking
+
+2️⃣ **Segmentation by Channel & Device**  
+- Analyzed data grouped by traffic source (e.g. Organic, Referral) and device (Desktop, Mobile)
+
+3️⃣ **Performance Metrics**  
+- Calculated revenue per session, conversion rate, and goal completions per channel  
+
+
+
+## 🔎 Key Insights & Business Recommendations
+
+### 📌 Key Takeaways:
+✔️ **Desktop users** drive higher revenue despite fewer sessions than mobile users  
+✔️ **Organic Search** is the best-performing traffic channel in conversion  
+✔️ **Referral traffic** shows high bounce rates and lower engagement  
+
+### ✅ Recommendations:
+- Invest more in **SEO** and **desktop experience optimization**  
+- Improve **landing page quality** for referral traffic to reduce bounce rate  
+- Use these segmentations for **budget allocation in marketing campaigns**
+
+
+
+## 📁 Repository Contents
+
+- `SQL_google_analytics_sample-ga_sessions.sql`: Query logic  
+- `README.md`: This file  
 
