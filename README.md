@@ -19,51 +19,21 @@ Currently, I am **transitioning to the Data Analytics field**, where I aim to ap
 - Consistently met and exceeded sales targets through a strategic, data-informed approach.
 
 ## 📂 Portfolio Projects
-Explore my key projects below. Each project reflects my commitment to delivering high-quality analyses and actionable insights.
 
-### 📊 Power BI Projects
+Explore my key projects below. Each one solves a real-world business problem and showcases my ability to translate data into insight.
 
-1. **RFM Segmentation Portfolio Project**
-   - Tools: Power BI
-   - Conducted Recency, Frequency, and Monetary (RFM) analysis to segment customers and drive targeted marketing strategies.
+| Project Name | Domain | Stakeholder / Audience | Business Question or Objective | Tools Used |
+|--------------|--------|-------------------------|-------------------------------|------------|
+| **RFM Segmentation Dashboard** | Retail / CRM | Marketing Team | How can we group customers to tailor engagement strategies? | Power BI |
+| **Supermarket Sales Dashboard** | Retail / Sales | Store Operations | What are the key trends in sales, customers, and product performance? | Power BI |
+| **Churn Prediction Model** | Telecom / Subscription | Customer Retention | Can we predict customer churn and act before they leave? | Python, Scikit-learn |
+| **Statistical A/B Testing** | Product / UX | Product Analyst | Does version A or B perform better and is the difference statistically significant? | Python, Pandas, Matplotlib |
+| **Internet Usage EDA** | Technology / Web | Data Analyst / General | What patterns can we uncover from internet usage trends? | Python, Seaborn, Matplotlib |
+| **Machine Learning Models Portfolio** | Various Domains | Data Science / Academic | Can we apply ML algorithms to solve real-world prediction tasks? | Python, TensorFlow, Scikit-learn |
+| **RFM Segmentation (Python)** | Retail / CRM | Marketing Analyst | Which segments drive the most value or risk for customer loyalty? | Python, Pandas, Matplotlib |
+| **Hypothesis Testing Project** | Business Strategy | Decision Maker | Can we validate assumptions about business performance with statistical evidence? | Excel (ToolPak), Python |
+| **COVID-19 Data Exploration** | Public Health / Global | Public Policy, Media | What does the data say about infection trends and geographic impact? | SQL |
 
-2. **Supermarket Analysis Dashboard & Presentation Insights**
-   - Tools: Power BI
-   - Built an interactive dashboard to analyze supermarket sales trends, customer behavior, and operational performance.
-
-### 🐍 Python Projects
-
-3. **Statistical A/B Testing Project**
-   - Tools: Python (Pandas, Matplotlib)
-   - Performed statistical A/B tests using Python libraries and exploratory techniques to evaluate the impact of business decisions and optimize performance outcomes.
-
-4. **Churn Prediction Project**
-   - Tools: Python (Scikit-learn, Pandas)
-   - Developed a machine learning model to predict customer churn and identify factors influencing retention.
-
-5. **Internet Data Exploration & Visualization Project**
-   - Tools: Python (Pandas, Seaborn, Matplotlib)
-   - Explored and visualized internet usage trends to uncover key patterns and insights.
-
-6. **Machine Learning Portfolio Project**
-   - Tools: Python (Scikit-learn, TensorFlow)
-   - Implemented and evaluated various machine learning models to solve real-world problems.
-
-7. **RFM Segmentation Portfolio Project**
-   - Tools: Python (Pandas, Matplotlib)
-   - Executed customer segmentation through RFM analysis to enhance marketing strategies and customer engagement.
-
-### 📊 Statistical Analysis Project
-
-8. **Explore Data and Hypothesis Testing Project**
-   - Tools: Excel (Analysis ToolPak), Pandas (for data cleaning)
-   - Conducted comprehensive exploratory data analysis (EDA) and performed hypothesis testing using Excel's **Analysis ToolPak** to derive meaningful insights and validate business assumptions.
-
-### 🗄️ SQL Projects
-
-9. **COVID-19 Data Exploration Project**
-   - Tools: SQL
-   - Analyzed COVID-19 datasets to extract meaningful insights on infection rates, testing patterns, and geographical impacts.
 
 ## 📬 Contact
 
