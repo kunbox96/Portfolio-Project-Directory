@@ -3,7 +3,7 @@ Author: Alvin Nguyễn – Nguyễn Thế Đạt
 Date: 2025-04-10  
 Tools Used: Power BI, Power Query, DAX
 
-![Customer Segmentation Banner](./image/banner.png)
+![Customer Segmentation Banner](./image/banner01.png)
 
 
 ## 📑 Table of Contents  
