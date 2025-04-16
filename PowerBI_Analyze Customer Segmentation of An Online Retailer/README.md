@@ -33,6 +33,37 @@ Sales representatives across regional offices in the US, Canada, UK, Australia, 
 - Key metrics including revenue, frequency, and product popularity have been visualized to support sales strategy.
 - Products with negative gross profit were explored. Either data entry contains price errors or the business is selling below cost. Stakeholders are advised to verify data integrity or pricing policy.
 
+### 📌 Why We Use RFM for This Project
+
+- The RFM (Recency – Frequency – Monetary) model is a proven method for evaluating customer value based on purchasing behavior. In this project, RFM was chosen to help sales teams:
+
+  - Segment customers into meaningful behavioral groups (e.g., Loyal, At Risk, Champions)
+
+  - Prioritize outreach by identifying high-value and high-risk segments
+
+  - Support targeted campaigns based on customer lifecycle and engagement patterns
+
+  - By focusing on how recently (Recency), how often (Frequency), and how much (Monetary) a customer has purchased, RFM allows the team to shift from generic sales efforts to data-driven, personalized strategy.
+
+- 📊 How We Use the Quintile Method for RFM Score
+  - To calculate RFM scores, we apply the quintile method, which ranks customers into 5 equal groups (from 1 to 5) for each metric:
+
+  - Recency Value = DATEDIFF(LastTransDate, DATE(2014,7,1), DAY)
+
+    → Lower value = more recent → higher R-score
+
+  - Frequency Value = COUNT(SalesOrderHeader[CustomerID])
+  
+    → Higher count = more frequent purchases → higher F-score
+
+  - Monetary Value = SUM(SalesTable[LineTotal])
+  
+    → Higher spending = more valuable → higher M-score
+
+  - Each customer receives a score from 1 (low) to 5 (high) for R, F, and M based on percentile ranking. These three scores are combined into an RFM composite score, which is then mapped to customer segments like “Champions,” “Promising,” or “At Risk.”
+
+  - This scoring approach ensures objectivity, scalability, and allows comparison across a large customer base with ease.
+
 ---
 
 ## 📂 Dataset Description & Data Structure
