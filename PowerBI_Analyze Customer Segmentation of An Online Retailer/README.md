@@ -20,7 +20,11 @@ Tools Used: Power BI, Google Bigquery, Power Query, DAX
 ### 📖 What is this project about?  
 Sales representatives across regional offices in the US, Canada, UK, Australia, Germany, and France face challenges understanding product performance, customer segmentation, and inventory optimization. The lack of unified visibility makes it difficult to align marketing efforts, predict sales performance, and support long-term customer relationships.
 
-![Stakeholder Problem](./image/problems.png)
+<details>
+  <summary> Click to expand</summary>
+
+  ![Stakeholder Problem](./image/problems.png)
+</details>
 
 ### ❓ Business Questions:
 - How can we segment customers based on their purchase behaviors (recency, frequency, and monetary value)?
@@ -28,7 +32,7 @@ Sales representatives across regional offices in the US, Canada, UK, Australia, 
 - Which products are most popular and at what rates across different customer groups?
 
 ### 🎯 Project Outcome:
-- Active dashboard showcases sales trends by product, customer, and geography.
+- Active dashboard showcases sales trends by product, customer.
 - RFM-based segmentation has been implemented.
 - Key metrics including revenue, frequency, and product popularity have been visualized to support sales strategy.
 - Products with negative gross profit were explored. Either data entry contains price errors or the business is selling below cost. Stakeholders are advised to verify data integrity or pricing policy.
