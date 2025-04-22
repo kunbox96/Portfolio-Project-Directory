@@ -1,8 +1,0 @@
-CREATE VIEW useful_data AS
-SELECT 
-	iso_code, continent, location,
-	date, total_cases, new_cases,
-	total_deaths, new_deaths, population,
-	new_tests, total_tests, tests_units,
-	total_vaccinations,	people_vaccinated
-FROM covid_deaths;

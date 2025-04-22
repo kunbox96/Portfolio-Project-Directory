@@ -18,21 +18,21 @@ Currently, I am **transitioning to the Data Analytics field**, where I aim to ap
 - Successfully revitalized underperforming stores by leveraging data analytics to identify areas for improvement.
 - Consistently met and exceeded sales targets through a strategic, data-informed approach.
 
+
 ## 📂 Portfolio Projects
 
 Explore my key projects below. Each one solves a real-world business problem and showcases my ability to translate data into insight.
 
-| Project Name | Domain | Stakeholder / Audience | Business Question or Objective | Tools Used |
-|--------------|--------|-------------------------|-------------------------------|------------|
-| **RFM Segmentation Dashboard** | Retail / CRM | Marketing Team | How can we group customers to tailor engagement strategies? | Power BI |
-| **Supermarket Sales Dashboard** | Retail / Sales | Store Operations | What are the key trends in sales, customers, and product performance? | Power BI |
-| **Churn Prediction Model** | Telecom / Subscription | Customer Retention | Can we predict customer churn and act before they leave? | Python, Scikit-learn |
-| **Statistical A/B Testing** | Product / UX | Product Analyst | Does version A or B perform better and is the difference statistically significant? | Python, Pandas, Matplotlib |
-| **Internet Usage EDA** | Technology / Web | Data Analyst / General | What patterns can we uncover from internet usage trends? | Python, Seaborn, Matplotlib |
-| **Machine Learning Models Portfolio** | Various Domains | Data Science / Academic | Can we apply ML algorithms to solve real-world prediction tasks? | Python, TensorFlow, Scikit-learn |
-| **RFM Segmentation (Python)** | Retail / CRM | Marketing Analyst | Which segments drive the most value or risk for customer loyalty? | Python, Pandas, Matplotlib |
-| **Hypothesis Testing Project** | Business Strategy | Decision Maker | Can we validate assumptions about business performance with statistical evidence? | Excel (ToolPak), Python |
-| **COVID-19 Data Exploration** | Public Health / Global | Public Policy, Media | What does the data say about infection trends and geographic impact? | SQL |
+| Project Name                                                                 | Domain                   | Stakeholder / Audience       | Business Question or Objective                                       | Tools Used                     |
+|------------------------------------------------------------------------------|--------------------------|------------------------------|----------------------------------------------------------------------|--------------------------------|
+| **Predict Customer Churn in Telecom Company**                                | Telecom / Subscription   | Retention Team               | Can we predict which customers are likely to churn?                 | Python, Scikit-learn           |
+| **Analyze Customer Segmentation of An Online Retailer**                      | Retail / CRM             | Marketing Team               | How can we group customers to tailor engagement strategies?         | Power BI                       |
+| **Retail Supermarket Analysis**                                              | Retail / Sales           | Store Operations             | What are the trends in sales, customers, and top-selling products?  | Power BI                       |
+| **Statistic A/B Testing Project**                                            | Product / UX             | Product Team / Marketing     | Is there a statistically significant difference between variants?   | Python, SciPy, Matplotlib      |
+| **Internet Exploration and Visualization Project**                           | Technology / Behavior    | Data Analyst / Research      | What insights can we uncover from online user behavior patterns?    | Python, Pandas, Seaborn        |
+| **Segment Customer & Visualize Purchase Behavior (Retail)**                 | Retail / CRM             | Marketing Analyst            | Which segments drive the most value or risk to business loyalty?    | Python, Pandas, Matplotlib     |
+| **Analyze Web Traffic Behavior from Google Merchandise Store**              | E-commerce / Web Traffic | Digital Marketing / Analyst  | What traffic sources and behaviors drive performance outcomes?      | SQL, BigQuery                  |
+
 
 
 ## 📬 Contact
