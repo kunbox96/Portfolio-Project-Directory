@@ -20,12 +20,6 @@ Tools Used: Power BI, Google Bigquery, Power Query, DAX
 ### 📖 What is this project about?  
 Sales representatives across regional offices in the US, Canada, UK, Australia, Germany, and France face challenges understanding product performance, customer segmentation, and inventory optimization. The lack of unified visibility makes it difficult to align marketing efforts, predict sales performance, and support long-term customer relationships.
 
-<details>
-  <summary> Click to expand</summary>
-
-  ![Stakeholder Problem](./image/problems.png)
-</details>
-
 ### ❓ Business Questions:
 - How can we segment customers based on their purchase behaviors (recency, frequency, and monetary value)?
 - Who are the best customers across all product lines?
@@ -49,24 +43,28 @@ Sales representatives across regional offices in the US, Canada, UK, Australia, 
 
   - By focusing on how recently (Recency), how often (Frequency), and how much (Monetary) a customer has purchased, RFM allows the team to shift from generic sales efforts to data-driven, personalized strategy.
 
-- 📊 How We Use the Quintile Method for RFM Score
-  - To calculate RFM scores, we apply the quintile method, which ranks customers into 5 equal groups (from 1 to 5) for each metric:
+### 📊 How We Use the Quintile Method for RFM Score
+  To calculate RFM scores, we apply the quintile method, which ranks customers into 5 equal groups (from 1 to 5) for each metric: Recency, Frequency, and Monetary value.
 
-  - Recency Value = DATEDIFF(LastTransDate, DATE(2014,7,1), DAY)
+  ### RFM Scoring Logic
 
-    → Lower value = more recent → higher R-score
+  - **Recency (R)**
+    - Measures how recently a customer made a purchase.
+    - **Lower value = more recent → higher R-score (5)**, and vice versa (**higher value = less recent → lower R-score (1)**).
+    
+  - **Frequency (F)**
+    - Measures how often a customer makes a purchase.
+    - **Higher value = more frequent purchases → higher F-score (5)**, and vice versa (**lower value = less frequent purchases → lower F-score (1)**).
 
-  - Frequency Value = COUNT(SalesOrderHeader[CustomerID])
-  
-    → Higher count = more frequent purchases → higher F-score
+  - **Monetary (M)**
+    - Measures how much money a customer spends.
+    - **Higher value = higher spending → higher M-score (5)**, and vice versa (**lower value = lower spending → lower M-score (1)**.
 
-  - Monetary Value = SUM(SalesTable[LineTotal])
-  
-    → Higher spending = more valuable → higher M-score
+### Example:
+- A customer who recently made a purchase, buys frequently, and spends a lot will receive R = 5, F = 5, M = 5, representing a top-tier customer ("Champion").
+- A customer who made a purchase a long time ago, buys infrequently, and spends little will receive R = 1, F = 1, M = 1, representing a lower-tier customer ("At Risk").
 
-  - Each customer receives a score from 1 (low) to 5 (high) for R, F, and M based on percentile ranking. These three scores are combined into an RFM composite score, which is then mapped to customer segments like “Champions,” “Promising,” or “At Risk.”
-
-  - This scoring approach ensures objectivity, scalability, and allows comparison across a large customer base with ease.
+Each customer is assigned an R, F, and M score, and these scores are combined into an overall RFM composite score, which helps to segment customers into meaningful categories.
 
 ---
 
@@ -230,66 +228,7 @@ Sales representatives across regional offices in the US, Canada, UK, Australia, 
 - Checked nulls, duplicates, and inconsistencies.
 - Identified products with negative gross profit — suggesting possible data errors or pricing issues.
 
-### 3. Apply Power DAX code to create Calendar table
-
-```DAX
-DimDate = 
-var _fromYear=YEAR(MIN(SalesOrderHeader[OrderDate]))
-var _toYear=2015   
-var _startOfFiscalYear=4 
-var _today=TODAY()
-return
-ADDCOLUMNS(
-    CALENDAR(DATE(_fromYear,1,1), DATE(_toYear,12,31)),
-    "Year", YEAR([Date]),
-    "Start of Year", DATE(YEAR([Date]),1,1),
-    "End of Year", DATE(YEAR([Date]),12,31),
-    "Month", MONTH([Date]),
-    "Start of Month", DATE(YEAR([Date]), MONTH([Date]), 1),
-    "End of Month", EOMONTH([Date],0),
-    "Days in Month", DATEDIFF(DATE(YEAR([Date]), MONTH([Date]), 1), EOMONTH([Date],0), DAY)+1,
-    "Year Month Number", INT(FORMAT([Date],"YYYYMM")),
-    "Year Month Name", FORMAT([Date],"YYYY-MMM"),
-    "Day", DAY([Date]),
-    "Day Name", FORMAT([Date],"DDDD"),
-    "Day Name Short", FORMAT([Date],"DDD"),
-    "Day of Week", WEEKDAY([Date]),
-    "Day of Year", DATEDIFF(DATE(YEAR([Date]),1,1), [Date], DAY)+1,
-    "Month Name", FORMAT([Date],"MMMM"),
-    "Month Name Short", FORMAT([Date],"MMM"),
-    "Quarter", QUARTER([Date]),
-    "Quarter Name", "Q"&FORMAT([Date],"Q"),
-    "Year Quarter Number", INT(FORMAT([Date],"YYYYQ")),
-    "Year Quarter Name", FORMAT([Date],"YYYY")&" Q"&FORMAT([Date],"Q"),
-    "Start of Quarter", DATE(YEAR([Date]), (QUARTER([Date])*3)-2, 1),
-    "End of Quarter", EOMONTH(DATE(YEAR([Date]), QUARTER([Date])*3, 1),0),
-    "Week of Year", WEEKNUM([Date]),
-    "Start of Week", [Date]-WEEKDAY([Date])+1,
-    "End of Week", [Date]+7-WEEKDAY([Date]),
-    "Fiscal Year", IF(_startOfFiscalYear=1,YEAR([Date]),YEAR([Date])+QUOTIENT(MONTH([Date])+(13-_startOfFiscalYear),13)),
-    "Fiscal Quarter", QUARTER(DATE(YEAR([Date]), MOD(MONTH([Date])+(13-_startOfFiscalYear)-1,12)+1, 1)),
-    "Fiscal Month", MOD(MONTH([Date])+(13-_startOfFiscalYear)-1,12)+1,
-    "Day Offset", DATEDIFF(_today,[Date],DAY),
-    "Month Offset", DATEDIFF(_today,[Date],MONTH),
-    "Quarter Offset", DATEDIFF(_today,[Date],QUARTER),
-    "Year Offset", DATEDIFF(_today,[Date],YEAR),
-    "Day Number", DAY([Date])
-)
-```
-
-### 4. Apply DAX to create metrics and RFM segment logic
-
-| Measure Name         | Description                                      |
-|----------------------|--------------------------------------------------|
-| Total Revenue        | SUM(SalesTable[LineTotal])                      |
-| Avg Order Value      | AVERAGE(SalesOrderHeader[TotalDue])             |
-| Order Count          | COUNT(SalesOrderHeader[SalesOrderID])           |
-| Recency Value        | DATEDIFF(LastTransDate, DATE(2014,7,1), DAY)    |
-| Frequency Value      | COUNT(SalesOrderHeader[CustomerID])             |
-| Monetary Value       | SUM(SalesTable[LineTotal])                      |
-| RFM Score            | Combine F, R, M scores (quintile method)        |
-| Popular Product Count| COUNT of orders per product                     |
-
+### 3. Analyze business problem, visualize and extract insights
 ---
 
 ## 📊 Key Insights & Visualizations
