@@ -78,8 +78,7 @@ The goal of this project is to **build a predictive machine learning model to id
   2. **Decision Tree**: A non-linear model that helped capture complex interactions between features.
   3. **Random Forest**: An ensemble model that provided the best generalization and accuracy on test data.
   
-  **Evaluation Metrics**: We used cross-validation and tuned hyperparameters using **GridSearchCV**. Key metrics like **Accuracy**, **Precision**, **Recall**, and **F1-Score** were calculated for each model.
-
+  **Evaluation Metrics**: We used cross-validation and tuned hyperparameters using **GridSearchCV**.
 - The boxplot illustrates the recall scores for three different machine learning models: **Logistic Regression**, **Decision Tree**, and **Random Forest**.
 
 ![Boxplot](./image/boxplot.png)
